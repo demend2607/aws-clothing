@@ -4,7 +4,7 @@ import {
 	signInWithRedirect,
 	signInWithPopup,
 	GoogleAuthProvider,
-	signInWithEmailAndPassword,
+	createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -20,23 +20,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
-//+ --------------------------------------------- Google Popup ---------------------------------------
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+//+ --------------------------------------- Google Popup Authentication ----------------------------------
+const googleProvider = new GoogleAuthProvider();
+
+googleProvider.setCustomParameters({
 	prompt: 'select_account',
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
-//+ ---------------------------------------------------------------------------------------------------
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
+//+ --------------------------------------------------------------------------------------------------- //
 
-//+ -------------------------------------- FireStore ---------------------------------------------------
+//+ -------------------------------------- FireStore database ------------------------------------------
 export const db = getFirestore();
-// Take some date and store that inside of Firestorm
+// Take some date and store that inside of Firestorm //
 export const createUserDocumentFromAuth = async (userAuth) => {
-	// Create data collection
+	if (!userAuth) return;
+	// Create data collection //
 	const userDocRef = doc(db, 'users', userAuth.uid);
-	//* ------- User existence check --------
+	//* -------------- User existence check ----------------
 	const userSnapshot = await getDoc(userDocRef);
 
 	if (!userSnapshot.exists()) {
@@ -52,6 +55,15 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 			console.log('error creating the user', error.message);
 		}
 	}
-	//* -----------------------------------
+	//* ----------------------------------------------- //
 	return userDocRef;
 };
+//+ ---------------------------------------------------------------------------------------------------- //
+
+//+ -------------------------------Email and Password Authentication -----------------------------------
+export const createAuthUserWithEmalAndPassword = async (email, password) => {
+	if (!email || !password) return;
+
+	return await createUserWithEmailAndPassword(auth, email, password);
+};
+//+ ---------------------------------------------------------------------------------------------------- //
