@@ -17,27 +17,19 @@ const defaultFormFields = {
 const SignUpForm = () => {
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const { email, password } = formFields;
-	console.log(formFields);
+
+	const resetFormFoelds = () => setFormFields(defaultFormFields);
 
 	//* Google handler
 	const signInWithGoogle = async () => {
-		try {
-			const { user } = await signInWithGooglePopup();
-			await createUserDocumentFromAuth(user);
-		} catch (error) {
-			if (error.code === 'auth/popup-closed-by-user') {
-				window.location.reload();
-			}
-		}
+		await signInWithGooglePopup();
 	};
-
-	const resetFormFoelds = () => setFormFields(defaultFormFields);
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await signInAuthUserWithEmailAndPassword(email, password);
-			console.log(response);
+			await signInAuthUserWithEmailAndPassword(email, password);
+
 			resetFormFoelds();
 		} catch (error) {
 			switch (error.code) {
