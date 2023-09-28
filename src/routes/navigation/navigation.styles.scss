@@ -5,10 +5,12 @@
 	justify-content: space-between;
 	margin-bottom: 25px;
 
+	border-bottom: 1px solid darkgrey;
+
 	.logo-container {
 		height: 100%;
 		width: 70px;
-		padding: 25px;
+		padding: 10px 20px;
 	}
 
 	.nav-links-container {
@@ -23,4 +25,8 @@
 			cursor: pointer;
 		}
 	}
+}
+.global-container {
+	width: 1400px;
+	margin: 20px auto;
 }
