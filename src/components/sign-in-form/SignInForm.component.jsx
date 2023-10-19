@@ -6,7 +6,8 @@ import {
 
 import Button, { BUTTON_TYPE_CLASSES } from '../button/Button.component';
 import FormInput from '../form-input/FormInput.component';
-import './signInForm.styles.scss';
+
+import { SignInContainer, ButtonsContainer } from './signInForm.styles';
 
 const defaultFormFields = {
 	email: '',
@@ -51,7 +52,7 @@ const SignUpForm = () => {
 	};
 
 	return (
-		<div className="sign-in-container">
+		<SignInContainer>
 			<h1>Already have an account?</h1>
 			<span>Sign in with your email and password</span>
 			<form onSubmit={handleSubmit}>
@@ -64,14 +65,14 @@ const SignUpForm = () => {
 					name="password"
 					value={password}
 				/>
-				<div className="buttons-container">
+				<ButtonsContainer>
 					<Button type="submit">Sign in</Button>
 					<Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={signInWithGoogle}>
 						Google sign in
 					</Button>
-				</div>
+				</ButtonsContainer>
 			</form>
-		</div>
+		</SignInContainer>
 	);
 };
 

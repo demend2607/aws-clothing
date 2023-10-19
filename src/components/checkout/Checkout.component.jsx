@@ -1,37 +1,39 @@
-import { useContext } from 'react';
-import { CartContext } from './../../context/cart.context';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
-import './checkout.styles.scss';
+import { selectCartItems, selectCartTotal } from '../../store/cart/cart.selector';
+
+import { CheckoutContainer, CheckoutHeader, HeaderBlock, CheckoutTotal } from './checkout.styles';
 
 import CheckoutItem from '../checkout-item/CheckoutItem.component';
 
 const Checkout = () => {
-	const { cartItems, cartTotal } = useContext(CartContext);
+	const cartItems = useSelector(selectCartItems);
+	const cartTotal = useSelector(selectCartTotal);
 
 	return (
-		<div className="checkout-container">
-			<div className="checkout-header">
-				<div className="header-block">
+		<CheckoutContainer>
+			<CheckoutHeader>
+				<HeaderBlock>
 					<span>Product</span>
-				</div>
-				<div className="header-block">
+				</HeaderBlock>
+				<HeaderBlock>
 					<span>Description</span>
-				</div>
-				<div className="header-block">
+				</HeaderBlock>
+				<HeaderBlock>
 					<span>Quantity</span>
-				</div>
-				<div className="header-block">
+				</HeaderBlock>
+				<HeaderBlock>
 					<span>Price</span>
-				</div>
-				<div className="header-block">
+				</HeaderBlock>
+				<HeaderBlock>
 					<span>Remove</span>
-				</div>
-			</div>
+				</HeaderBlock>
+			</CheckoutHeader>
 			{cartItems.map((cartItem) => {
 				return <CheckoutItem cartItem={cartItem} key={cartItem.id} />;
 			})}
-			<span className="total">Total: ${cartTotal}</span>
-		</div>
+			<CheckoutTotal>Total: ${cartTotal}</CheckoutTotal>
+		</CheckoutContainer>
 	);
 };
 
