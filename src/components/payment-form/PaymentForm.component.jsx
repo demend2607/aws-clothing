@@ -25,11 +25,15 @@ const PaymentForm = () => {
 		setIsProcessigngPayment(true);
 
 		const response = await fetch('/.netlify/functions/create-payment-intent', {
+			mode: 'no-cors',
 			method: 'post',
 			headers: {
+				'Access-Control-Allow-Headers': 'Content-Type',
+				'Access-Control-Allow-Origin': '*',
 				'Content-Type': 'application/json',
+				'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PATCH',
 			},
-			body: JSON.stringify({ amount }),
+			body: JSON.stringify({ amount: amount }),
 		}).then((res) => res.json());
 		const {
 			paymentIntent: { client_secret },

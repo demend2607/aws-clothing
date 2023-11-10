@@ -24,6 +24,7 @@ const App = () => {
 			dispatch(setCurrentUser(user));
 		});
 		return unsubscribe;
+		// eslint-disable-next-line no-unreachable
 		dispatch(checkUserSession());
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
