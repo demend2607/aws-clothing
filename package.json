@@ -7,6 +7,11 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
+=======
+    "babel": "^6.23.0",
+    "dotenv": "^16.3.1",
+>>>>>>> 551d86c (stripe complete)
     "firebase": "^10.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,7 +23,12 @@
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.8",
     "sass": "^1.66.1",
+<<<<<<< HEAD
     "styled-components": "^6.0.8",
+=======
+    "stripe": "^14.3.0",
+    "styled-components": "^5.3.3",
+>>>>>>> 551d86c (stripe complete)
     "web-vitals": "^2.1.4"
   },
   "scripts": {
