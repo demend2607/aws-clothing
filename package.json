@@ -24,11 +24,15 @@
     "reselect": "^4.1.8",
     "sass": "^1.66.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "styled-components": "^6.0.8",
 =======
     "stripe": "^14.3.0",
     "styled-components": "^5.3.3",
 >>>>>>> 551d86c (stripe complete)
+=======
+    "styled-components": "^5.3.3",
+>>>>>>> cf35d4e (signIn, and other update)
     "web-vitals": "^2.1.4"
   },
   "scripts": {

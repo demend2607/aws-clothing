@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 import { ReactComponent as ShoppingSvg } from '../../assets/shopping-bag.svg';
 

@@ -69,7 +69,7 @@ export const getCategoriesAndDocuments = async () => {
 };
 
 // Take some date and store that inside of Firestorm //
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
 	if (!userAuth) return;
 	// Create data collection //
 	const userDocRef = doc(db, 'users', userAuth.uid);
@@ -84,13 +84,14 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 				displayName,
 				email,
 				createdAt,
+				...additionalInformation,
 			});
 		} catch (error) {
 			console.log('error creating the user', error.message);
 		}
 	}
 	//* ----------------------------------------------- //
-	return userDocRef;
+	return userSnapshot;
 };
 //+ ---------------------------------------------------------------------------------------------------- //
 
@@ -117,3 +118,16 @@ export const signOutUser = async () => await signOut(auth);
 //+ ------------------------------- Observer on auth state change ------------------------------------------+
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
 //+ ------------------------------------------------------------------------------------------------------- //
+
+export const getCurrentUser = () => {
+	return new Promise((resolve, reject) => {
+		const unsubscribe = onAuthStateChanged(
+			auth,
+			(userAuth) => {
+				unsubscribe();
+				resolve(userAuth);
+			},
+			reject
+		);
+	});
+};
