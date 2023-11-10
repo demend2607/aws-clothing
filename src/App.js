@@ -10,7 +10,8 @@ import Authentication from './routes/authentication/Authentication';
 import Navigation from './routes/navigation/Navigation.component';
 import Checkout from './components/checkout/Checkout.component';
 
-import { checkUserSession } from './store/user/user.action';
+import { checkUserSession, setCurrentUser } from './store/user/user.action';
+import { createUserDocumentFromAuth, onAuthStateChangedListener } from './utils/firebase/firebase.utils';
 
 const App = () => {
 	const dispatch = useDispatch();
