@@ -4,7 +4,7 @@ const subColor = 'grey'; // From scss: $sub-color: grey;
 const mainColor = 'black'; //From scss:  $main-color: black;
 
 const shrinkLabelStyles = css`
-	top: -14px;
+	top: -18px;
 	font-size: 12px;
 	color: ${mainColor};
 `;
@@ -26,6 +26,27 @@ export const FormInputLabel = styled.label`
 		@include shrinkLabel();
 	}
 `;
+export const TextArea = styled.textarea`
+	background-color: white;
+	color: ${subColor};
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: 20px;
+	border-bottom: 1px solid ${subColor};
+	border-top: 1px solid ${subColor};
+	margin: 25px 0;
+	height: 120px;
+
+	&:focus {
+		outline: none;
+	}
+	&:focus ~ ${FormInputLabel} {
+		${shrinkLabelStyles}
+	}
+`;
 export const Input = styled.input`
 	background-color: white;
 	color: ${subColor};
@@ -44,9 +65,6 @@ export const Input = styled.input`
 
 	&:focus ~ ${FormInputLabel} {
 		${shrinkLabelStyles};
-	}
-
-	.form-input-label {
 	}
 `;
 export const Group = styled.div`

@@ -5,6 +5,5 @@ export const DirectoryContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	max-width: 1400px;
 	margin: 10px auto;
 `;

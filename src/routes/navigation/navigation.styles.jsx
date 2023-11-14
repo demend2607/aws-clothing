@@ -32,5 +32,8 @@ export const NavLink = styled(Link)`
 
 export const GlobalContainer = styled.div`
 	width: 1400px;
+	height: 100%;
 	margin: 20px auto;
+	display: flex;
+	flex-direction: column;
 `;

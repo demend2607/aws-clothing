@@ -18,6 +18,7 @@ import {
 	writeBatch,
 	query,
 	getDocs,
+	addDoc,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -30,7 +31,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// eslint-disable-next-line no-unused-vars
 const firebaseApp = initializeApp(firebaseConfig);
 
 //+ --------------------------------------- Google Popup Authentication ----------------------------------+
@@ -46,9 +46,18 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googlePro
 //+ --------------------------------------------------------------------------------------------------- //
 
 //+ -------------------------------------- FireStore database ------------------------------------------+
-export const db = getFirestore();
-
-//* -------------------- Create collection --------------------
+export const db = getFirestore(firebaseApp);
+//* -------------------- Create contact requests database -------------------
+export const createContactCollection = async ({ displayName, email, message }) => {
+	const contactCollection = collection(db, 'contacts');
+	const contactSnapshot = await addDoc(contactCollection, {
+		displayName,
+		email,
+		message,
+	});
+	return contactSnapshot;
+};
+//* -------------------- Create list items of categories --------------------
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
 	const collectionRef = collection(db, collectionKey);
 	const batch = writeBatch(db);
@@ -69,6 +78,7 @@ export const getCategoriesAndDocuments = async () => {
 	return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
+//* -------------------- Create user database --------------------
 // Take some date and store that inside of Firestorm //
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
 	if (!userAuth) return;
@@ -91,9 +101,10 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
 			console.log('error creating the user', error.message);
 		}
 	}
-	//* ----------------------------------------------- //
+
 	return userSnapshot;
 };
+//* ------------------------------------------------------------- //
 //+ ---------------------------------------------------------------------------------------------------- //
 
 //+ ------------------------------- Email and Password Authentication -----------------------------------+

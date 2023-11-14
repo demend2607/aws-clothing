@@ -13,6 +13,7 @@ import { selectCurrentUser } from '../../store/user/user.selector';
 import { signOutStart } from '../../store/user/user.action';
 
 import { LogoContainer, NavLinks, NavigationContainer, NavLink, GlobalContainer } from './navigation.styles';
+import Footer from '../../components/footer/Footer.component';
 
 const Navigation = () => {
 	const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Navigation = () => {
 				</LogoContainer>
 				<NavLinks>
 					<NavLink to="/shop">SHOP</NavLink>
-					<NavLink to="/contacts">CONTACT</NavLink>
+					<NavLink to="/contact">CONTACT</NavLink>
 					{currentUser ? (
 						<NavLink onClick={signOutUser}>SIGN OUT</NavLink>
 					) : (
@@ -42,6 +43,7 @@ const Navigation = () => {
 			<GlobalContainer>
 				<Outlet />
 			</GlobalContainer>
+			<Footer />
 		</Fragment>
 	);
 };

@@ -1,9 +1,9 @@
-import { FormInputLabel, Group, Input } from './formInput.styles';
+import { FormInputLabel, Group, Input, TextArea } from './formInput.styles';
 
 const FormInput = ({ label, ...otherProps }) => {
 	return (
 		<Group>
-			<Input {...otherProps} />
+			{otherProps.type !== 'textarea' ? <Input {...otherProps} /> : <TextArea {...otherProps} />}
 			{label && (
 				// className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}
 				<FormInputLabel shrink={otherProps.value.length}>{label}</FormInputLabel>
