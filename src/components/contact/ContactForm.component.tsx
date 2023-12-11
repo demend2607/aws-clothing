@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 import { createContactCollection } from '../../utils/firebase/firebase.utils';
 
@@ -18,7 +18,7 @@ const ContactForm = () => {
 
 	const resetFormFoelds = () => setFormFields(defaultFormFields);
 
-	const handleSubmit = (event) => {
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		try {
 			createContactCollection(formFields);
@@ -28,7 +28,7 @@ const ContactForm = () => {
 		}
 	};
 
-	const handleChange = (event) => {
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
 
 		setFormFields({ ...formFields, [name]: value });
@@ -37,9 +37,9 @@ const ContactForm = () => {
 	return (
 		<ContactFormContainer>
 			<h1 className="contact-header">Contact us</h1>
-			<p className="contact-preview">
+			<span className="contact-preview">
 				Feel free to contact us if you need any assistance, any help or another question.
-			</p>
+			</span>
 			<form onSubmit={handleSubmit}>
 				<FormInput
 					required

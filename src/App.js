@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import Home from './routes/home/Home.component';
+import Home from './routes/home/Home.component.tsx';
 import Shop from './routes/shop/Shop.component';
 import Contact from './routes/contact/Contact.component';
 import Authentication from './routes/authentication/Authentication';

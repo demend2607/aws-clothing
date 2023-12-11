@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+type FormInputLabelProps = {
+	shrink?: boolean;
+};
+
 const subColor = 'grey'; // From scss: $sub-color: grey;
 const mainColor = 'black'; //From scss:  $main-color: black;
 
@@ -9,7 +13,7 @@ const shrinkLabelStyles = css`
 	color: ${mainColor};
 `;
 
-export const FormInputLabel = styled.label`
+export const FormInputLabel = styled.label<FormInputLabelProps>`
 	color: $sub-color;
 	font-size: 16px;
 	font-weight: normal;
@@ -26,27 +30,7 @@ export const FormInputLabel = styled.label`
 		@include shrinkLabel();
 	}
 `;
-export const TextArea = styled.textarea`
-	background-color: white;
-	color: ${subColor};
-	font-size: 18px;
-	padding: 10px 10px 10px 5px;
-	display: block;
-	width: 100%;
-	border: none;
-	border-radius: 20px;
-	border-bottom: 1px solid ${subColor};
-	border-top: 1px solid ${subColor};
-	margin: 25px 0;
-	height: 120px;
 
-	&:focus {
-		outline: none;
-	}
-	&:focus ~ ${FormInputLabel} {
-		${shrinkLabelStyles}
-	}
-`;
 export const Input = styled.input`
 	background-color: white;
 	color: ${subColor};
