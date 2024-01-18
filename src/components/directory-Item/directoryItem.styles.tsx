@@ -4,6 +4,9 @@ import styled from 'styled-components';
 type BackgroundImageProps = {
 	imageUrl: string;
 };
+type DirectoryItemProps = {
+	size?: boolean;
+};
 
 export const DirectoryImage = styled.div<BackgroundImageProps>`
 	background-image: ${({ imageUrl }) => `url(${imageUrl})`};
@@ -37,9 +40,9 @@ export const DirectoryBody = styled.div`
 		font-size: 16px;
 	}
 `;
-export const DirectoryItemContaner = styled(Link)`
+export const DirectoryItemContaner = styled(Link)<DirectoryItemProps>`
+	height: ${({ size }) => (size ? '380px' : '240px')};
 	min-width: 30%;
-	height: 240px;
 	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
@@ -65,5 +68,8 @@ export const DirectoryItemContaner = styled(Link)`
 
 	&:last-child {
 		margin-left: 7.5px;
+	}
+	@media screen and (max-width: 800px) {
+		height: 200px;
 	}
 `;

@@ -6,7 +6,6 @@ export const PaymentFormContainer = styled.div`
 	/* margin-top: 40px; */
 	height: 300px;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 `;
 

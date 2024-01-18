@@ -6,7 +6,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterBody = styled.div`
-	width: 600px;
+	max-width: 600px;
 	margin: 0 auto;
 	text-align: center;
 	p {

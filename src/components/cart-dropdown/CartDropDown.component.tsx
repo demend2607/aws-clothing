@@ -1,10 +1,8 @@
-// import { useContext } from 'react';
-// import { CartContext } from '../../context/cart.context';
+import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { selectCartItems } from '../../store/cart/cart.selector';
-
-import { useNavigate } from 'react-router-dom';
 
 import Button from '../button/Button.component';
 import CartItem from '../cart-item/CartItem.component';
@@ -12,12 +10,12 @@ import CartItem from '../cart-item/CartItem.component';
 import { CartDropdownContainer, EmptyMesssage, CartItems } from './cartDropDown.styles';
 
 const CartDropDown = () => {
-	// const { cartItems } = useContext(CartContext);
 	const cartItems = useSelector(selectCartItems);
 	const navigate = useNavigate();
-	const goToCheckoutHandler = () => {
+
+	const goToCheckoutHandler = useCallback(() => {
 		navigate('/checkout');
-	};
+	}, []);
 	return (
 		<CartDropdownContainer>
 			{cartItems.length === 0 ? (

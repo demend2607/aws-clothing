@@ -7,6 +7,9 @@ export const CheckoutContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	@media screen and (max-width: 700px) {
+		font-size: 14px;
+	}
 `;
 
 export const CheckoutHeader = styled.div`

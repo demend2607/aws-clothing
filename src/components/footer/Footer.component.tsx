@@ -3,7 +3,7 @@ const Footer = () => {
 	return (
 		<FooterContainer>
 			<FooterBody>
-				<p>&copy; Custom footer integrated in navigation panel &reg;</p>
+				<p>&copy; Custom footer &reg;</p>
 			</FooterBody>
 		</FooterContainer>
 	);

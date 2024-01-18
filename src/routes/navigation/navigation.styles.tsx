@@ -15,6 +15,10 @@ export const LogoContainer = styled(Link)`
 	height: 100%;
 	width: 70px;
 	padding: 10px 20px;
+	@media screen and (max-width: 800px) {
+		width: 10px;
+		/* padding: 0; */
+	}
 `;
 
 export const NavLinks = styled.div`
@@ -23,6 +27,9 @@ export const NavLinks = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
+	@media screen and (max-width: 800px) {
+		width: 80%;
+	}
 `;
 
 export const NavLink = styled(Link)`
@@ -31,9 +38,9 @@ export const NavLink = styled(Link)`
 `;
 
 export const GlobalContainer = styled.div`
-	width: 1400px;
+	max-width: 1400px;
 	height: 100%;
 	margin: 20px auto;
-	display: flex;
-	flex-direction: column;
+	/* display: flex;
+	flex-direction: column; */
 `;
