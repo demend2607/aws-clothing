@@ -16,7 +16,7 @@ import { checkUserSession, setCurrentUser } from './store/user/user.action';
 import { createUserDocumentFromAuth, onAuthStateChangedListener } from './utils/firebase/firebase.utils';
 
 const Home = lazy(() => import('./routes/home/Home.component.tsx'));
-const Authentication = lazy(() => import('./routes/authentication/Authentication'));
+const Authentication = lazy(() => import('./routes/authentication/Authentication.component'));
 const Navigation = lazy(() => import('./routes/navigation/Navigation.component'));
 const Checkout = lazy(() => import('./components/checkout/Checkout.component'));
 const Shop = lazy(() => import('./routes/shop/Shop.component'));

@@ -22,6 +22,7 @@ const Category = () => {
 	useEffect(() => {
 		setProducts(categoriesMap[category]);
 	}, [category, categoriesMap]);
+	console.log(products);
 
 	return (
 		<Fragment>

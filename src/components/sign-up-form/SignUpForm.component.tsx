@@ -20,7 +20,7 @@ const SignUpForm = () => {
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const { displayName, email, password, confirmPassword } = formFields;
 
-	const resetFormFoelds = () => setFormFields(defaultFormFields);
+	const resetFormFields = () => setFormFields(defaultFormFields);
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -31,7 +31,7 @@ const SignUpForm = () => {
 		}
 		try {
 			dispatch(signUpStart(email, password, displayName));
-			resetFormFoelds();
+			resetFormFields();
 		} catch (error) {
 			if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
 				alert('Cannot create user, email already in use');

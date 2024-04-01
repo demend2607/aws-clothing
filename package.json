@@ -1,5 +1,6 @@
 {
 	"name": "aws-clothing",
+	"homepage": "https://aws-clothing.github.io/aws-clothing/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
@@ -33,6 +34,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
@@ -56,6 +59,7 @@
 		]
 	},
 	"devDependencies": {
-		"babel-plugin-macros": "^3.1.0"
+		"babel-plugin-macros": "^3.1.0",
+		"gh-pages": "^6.1.1"
 	}
 }
