@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/aws-clothing/static/js/main.b708b54d.js",
+    "static/js/32.6bcc762a.chunk.js": "/aws-clothing/static/js/32.6bcc762a.chunk.js",
+    "static/js/928.05a06d80.chunk.js": "/aws-clothing/static/js/928.05a06d80.chunk.js",
+    "static/js/274.3a9a8be4.chunk.js": "/aws-clothing/static/js/274.3a9a8be4.chunk.js",
+    "static/js/313.c1c03056.chunk.js": "/aws-clothing/static/js/313.c1c03056.chunk.js",
+    "static/js/726.a99b0ae0.chunk.js": "/aws-clothing/static/js/726.a99b0ae0.chunk.js",
+    "static/js/898.77fd3a4b.chunk.js": "/aws-clothing/static/js/898.77fd3a4b.chunk.js",
+    "static/js/787.f7da7cbd.chunk.js": "/aws-clothing/static/js/787.f7da7cbd.chunk.js",
+    "static/media/shopping-bag.svg": "/aws-clothing/static/media/shopping-bag.a688874f6f1507316bdfa420328a4a53.svg",
+    "static/media/logo.svg": "/aws-clothing/static/media/logo.3a4e2b15908e7a4c25343677d232b7e6.svg",
+    "index.html": "/aws-clothing/index.html",
+    "main.b708b54d.js.map": "/aws-clothing/static/js/main.b708b54d.js.map",
+    "32.6bcc762a.chunk.js.map": "/aws-clothing/static/js/32.6bcc762a.chunk.js.map",
+    "928.05a06d80.chunk.js.map": "/aws-clothing/static/js/928.05a06d80.chunk.js.map",
+    "274.3a9a8be4.chunk.js.map": "/aws-clothing/static/js/274.3a9a8be4.chunk.js.map",
+    "313.c1c03056.chunk.js.map": "/aws-clothing/static/js/313.c1c03056.chunk.js.map",
+    "726.a99b0ae0.chunk.js.map": "/aws-clothing/static/js/726.a99b0ae0.chunk.js.map",
+    "898.77fd3a4b.chunk.js.map": "/aws-clothing/static/js/898.77fd3a4b.chunk.js.map",
+    "787.f7da7cbd.chunk.js.map": "/aws-clothing/static/js/787.f7da7cbd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b708b54d.js"
+  ]
+}
