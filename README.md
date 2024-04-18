@@ -4,5 +4,5 @@
 
 Technologies and libraries used:</br> 
   &nbsp;React, Typescript, Redux.</br>
-  &nbsp;Styed-components(css), Firebase(authetication), React-router, Redux-persist, saga.</br>
-  &nbsp;Stripe(payment(demo))
+  &nbsp;&nbsp;Styed-components(css), Firebase(authetication), React-router, Redux-persist, saga.</br>
+  &nbsp;&nbsp;&nbsp;Stripe(payment(demo))
